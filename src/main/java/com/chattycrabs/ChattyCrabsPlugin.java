@@ -104,10 +104,12 @@ public class ChattyCrabsPlugin extends Plugin {
         taunt = getRandomTaunt(baseTaunts);
       }
 
-      npc.setOverheadText(taunt);
-      client.addChatMessage(ChatMessageType.PUBLICCHAT, npc.getName(), taunt, npc.getName());
-      tauntExpireTick = client.getTickCount() + 5;
-      targetCrab = npc;
+      if (!taunt.isEmpty()) {
+        npc.setOverheadText(taunt);
+        client.addChatMessage(ChatMessageType.PUBLICCHAT, npc.getName(), taunt, npc.getName());
+        tauntExpireTick = client.getTickCount() + 5;
+        targetCrab = npc;
+      }
     }
   }
 
