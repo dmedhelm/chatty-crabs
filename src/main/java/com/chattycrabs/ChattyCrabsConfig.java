@@ -8,10 +8,10 @@ import net.runelite.client.config.ConfigItem;
 public interface ChattyCrabsConfig extends Config
 {
   @ConfigItem(
-      keyName = "damageThreshold",
-      name = "Damage Threshold",
-      description = "Set the highest amount that the chatter appears.")
-  default int damageThreshold() {
-    return 5;
+      keyName = "displayChatMessage",
+      name = "Display Chat Message",
+      description = "If true, the crab taunt will show up in chat.")
+  default boolean displayChatMessage() {
+    return false;
   }
 }
